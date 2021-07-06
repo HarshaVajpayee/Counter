@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+
+      body {
+        display: grid;
+        place-items: center;
+        height: 100vh;
+        background: #f2f8ff;
+        padding: 0;
+        margin: 0;
+      }
+
+      #container {
+        height: 400px;
+        width: 400px;
+        background: #fff;
+        border: 1px solid #e2ebf4;
+        position: relative;
+      }
+
+      #container h2 {
+        color: #1479ff;
+        font-size: 50px;
+        position: absolute;
+        top: 8%;
+        left: 25%;
+      }
+
+      #container h1 {
+        width: 123px;
+        height: 127px;
+        text-align: center;
+        font-size: 110px;
+        position: absolute;
+        top: 30%;
+        left: 35%;
+        color: #3ddcef;
+      }
+
+      #buttons {
+        height: 50px;
+        width: 260px;
+        position: absolute;
+        button: 8%;
+        left: 70px;
+      }
+
+      #buttons button {
+        margin-top: 250px;
+        height: 50px;
+        width: 120px;
+        background: #1479ff;
+        outline: none;
+        border-radius: 5px;
+        color: #fff;
+        border: 1px solid #191c2130;
+        cursor: pointer;
+      }
+
+      #increment {
+        position: absolute;
+        right: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h2>Counter</h2>
+      <h1 id="counterValue">0</h1>
+      <div id="buttons">
+        <button id="decrement">Decrement</button>
+        <button id="increment">Increment</button>
+      </div>
+    </div>
+
+    <script>
+      let increment = document.querySelector("#increment");
+      let decrement = document.querySelector("#decrement");
+      let counterValue = document.querySelector("#counterValue");
+
+      let counter = 0;
+
+      increment.addEventListener("click", ()=>{
+        counter++;
+        counterValue.innerText = counter;
+      });
+      decrement.addEventListener("click", ()=>{
+        counter--;
+        counterValue.innerText = counter;
+      });
+    </script>
+  </body>
+</html>
